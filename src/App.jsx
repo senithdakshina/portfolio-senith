@@ -36,7 +36,7 @@ const styles = {
   text: {
     fontSize: "1.2rem",
  
-    color: "#555",
+   
 
     color: "#da4848ff",
 
