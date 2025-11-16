@@ -6,8 +6,13 @@ import './App.css'
 function App() {
   return (
     <div style={styles.container}>
+
       <h1 style={styles.title}>🚧 Under Maintenance 🚧</h1>
       <p style={styles.text}>Our website is currently undergoing maintenance.</p>
+
+      <h1 style={styles.text}>🚧 Under Maintenance 🚧</h1>
+      <p style={styles.text}>website is currently undergoing maintenance.</p>
+
       <p style={styles.text}>Please check back soon!</p>
     </div>
   );
@@ -30,8 +35,15 @@ const styles = {
   },
   text: {
     fontSize: "1.2rem",
+ 
     color: "#555",
+
+    color: "#da4848ff",
+
   },
 };
 
 export default App;
+
+
+
