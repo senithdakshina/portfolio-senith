@@ -6,7 +6,7 @@ import './App.css'
 function App() {
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>🚧 Under Maintenance 🚧</h1>
+      <h1 style={styles.text}>🚧 Under Maintenance 🚧</h1>
       <p style={styles.text}>website is currently undergoing maintenance.</p>
       <p style={styles.text}>Please check back soon!</p>
     </div>
