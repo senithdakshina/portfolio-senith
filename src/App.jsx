@@ -10,8 +10,7 @@ function App() {
       <h1 style={styles.title}>🚧 Under Maintenance 🚧</h1>
       <p style={styles.text}>Our website is currently undergoing maintenance.</p>
 
-      <h1 style={styles.text}>🚧 Under Maintenance 🚧</h1>
-      <p style={styles.text}>website is currently undergoing maintenance.</p>
+      
 
       <p style={styles.text}>Please check back soon!</p>
     </div>
@@ -32,12 +31,11 @@ const styles = {
   title: {
     fontSize: "2.5rem",
     marginBottom: "10px",
+    color: "#da4848ff",
   },
   text: {
     fontSize: "1.2rem",
  
-   
-
     color: "#da4848ff",
 
   },
