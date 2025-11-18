@@ -8,7 +8,7 @@ function App() {
     <div style={styles.container}>
 
       <h1 style={styles.title}>🚧 Under Maintenance 🚧</h1>
-      <p style={styles.text}>Our website is currently undergoing maintenance.</p>
+      <p style={styles.text}>website is currently undergoing maintenance.</p>
 
       
 
