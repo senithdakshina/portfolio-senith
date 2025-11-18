@@ -1,45 +1,23 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {Home} from "./pages/Home";
+import { Notfound } from './pages/Notfound';
 
 function App() {
   return (
-    <div style={styles.container}>
-
-      <h1 style={styles.title}>🚧 Under Maintenance 🚧</h1>
-      <p style={styles.text}>Our website is currently undergoing maintenance.</p>
-
-      
-
-      <p style={styles.text}>Please check back soon!</p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Home></Home>}></Route>
+        <Route path='*' element={<Notfound></Notfound>}> </Route>
+      </Routes>
+    
+    </BrowserRouter>
   );
-}
-
-const styles = {
-  container: {
-    height: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#f7f7f7",
-    textAlign: "center",
-    padding: "20px",
-  },
-  title: {
-    fontSize: "2.5rem",
-    marginBottom: "10px",
-    color: "#da4848ff",
-  },
-  text: {
-    fontSize: "1.2rem",
- 
-    color: "#da4848ff",
-
-  },
 };
+
+
 
 export default App;
 
