@@ -61,9 +61,12 @@ export const AboutMe = () => {
                     University
                   </p>
                   <p className="text-muted-foreground">
-                    Successfully organized the event for 200+ participants,
-                    demonstrating leadership, project management, and team
-                    collaboration skills.
+                    Led the planning and execution of a university-level eSports
+                    competition hosted by the Department of Computer Science and
+                    Technology, managing a team of 10+ members. Successfully
+                    organized the event for 200+ participants, demonstrating
+                    leadership, project management, and team collaboration
+                    skills.
                   </p>
                 </div>
               </div>
@@ -97,7 +100,8 @@ export const AboutMe = () => {
                 <div className="text-left">
                   <h4 className="text-semibold text-lg">Soft skills</h4>
                   <p className="text-muted-foreground">
-                    Creative and logical thinker with strong communication, effective time management, and team management skills.
+                    Creative and logical thinker with strong communication,
+                    effective time management, and team management skills.
                   </p>
                 </div>
               </div>
