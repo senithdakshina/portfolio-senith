@@ -10,10 +10,10 @@ export const ThemeToggle = () =>{
         if(storagetheme == "dark"){
             setIsDarkmode(true)
             document.documentElement.classList.add("dark");
-        }else{
-            
-            localStorage.setItem("theme","dark");
+        }else if(storagetheme === "light"){
             setIsDarkmode(false);
+            localStorage.setItem("theme","dark");
+            
         }
     },[])
 
