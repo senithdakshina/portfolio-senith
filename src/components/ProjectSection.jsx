@@ -15,7 +15,7 @@ const projects = [
     title: "A full-stack e-commerce platform developed for a real client with personalized jewelry suggestions.",
     image: "./Projects/Wave Mirissa pr.png",
     Description: " Built an NLP driven system that recommends necklaces based on user questionnaire data. Created a Python pipeline that detects face and neck landmarks for precise product placement.Developed a Virtual Try-On feature that overlays necklace designs onto user images",
-     url:"",
+     url:"https://github.com/senithdakshina/WaveMirissa-frontend",
     tags: ["Spring Boot", "React", " PostgreSQL"," Python"],
   },
   {
