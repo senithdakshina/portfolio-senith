@@ -85,7 +85,7 @@ export const ProjectSection = () => {
               <h3 className="text-xl font-semibold mb-1">{projects.title}</h3>
               <p className="text-muted-foreground text-sm mb-4">{projects.Description}</p>
               <div className="flex justify-between items-center">
-                <div className="flex space-x-3">
+                <div className="relative card-container">
                     <a href={projects.url} target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300">
                     <ExternalLink size={20}></ExternalLink>Link
                     </a>
