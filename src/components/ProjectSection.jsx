@@ -46,7 +46,7 @@ const projects = [
     id: 6,
     title: "Real-Time Voice Agent Interview Platform",
     image: "./Projects/vocaAI.png",
-    Description: "Built with Next.js for the user interface and backend logic, Firebase for authentication and data storage, styled with TailwindCSS and using Vapi's voice agents, Prepwise is a website project designed to help you learn integrating AI",
+    Description: "VocaAI is an AI-powered interview preparation platform built with Next.js, Firebase, Tailwind CSS, Vapi AI, and Google Gemini. It enables users to create and take realistic AI-driven voice interviews, receive instant feedback, and track progress through a modern, responsive dashboard. The project focuses on real-world AI integration, secure authentication, and a seamless user experience.",
      url:"https://github.com/senithdakshina/Real-Time-Voice-Agent-Interview",
     tags: ["Next.js", "Firebase", "Tailwind CSS","Vapi AI","shadcn/ui","Google Gemeni"], 
   },
@@ -85,7 +85,7 @@ export const ProjectSection = () => {
               <h3 className="text-xl font-semibold mb-1">{projects.title}</h3>
               <p className="text-muted-foreground text-sm mb-4">{projects.Description}</p>
               <div className="flex justify-between items-center">
-                <div className="relative card-container">
+                <div className="flex space-x-43">
                     <a href={projects.url} target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300">
                     <ExternalLink size={20}></ExternalLink>Link
                     </a>
