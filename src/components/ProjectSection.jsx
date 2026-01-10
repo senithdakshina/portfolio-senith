@@ -42,14 +42,14 @@ const projects = [
     //  url:"https://www.linkedin.com/posts/senith-dakshina_lifeline-healthtech-webapp-activity-7314344203667288065-m6t7?utm_source=share&utm_medium=member_desktop&rcm=ACoAADgLMkIBYHMRjftwo685t0-ymjYvk-FDdl0",
     tags: ["Python", "TensorFlow", "Keras"], 
   },
-  //    {
-  //   id: 5,
-  //   title: "AI Trip Planner",
-  //   image: "./Projects/ceb.jpg",
-  //   Description: "Developed a donation platform connecting donors with individuals needing financial support formedical operations, ensuring transparency, security, and real-time engagement. Integrated secure payment processing ",
-  //    url:"https://www.linkedin.com/posts/senith-dakshina_lifeline-healthtech-webapp-activity-7314344203667288065-m6t7?utm_source=share&utm_medium=member_desktop&rcm=ACoAADgLMkIBYHMRjftwo685t0-ymjYvk-FDdl0",
-  //   tags: ["Python", "TensorFlow", "Keras"], 
-  // },
+     {
+    id: 6,
+    title: "Real-Time Voice Agent Interview Platform",
+    image: "./Projects/vocaAI.png",
+    Description: "Built with Next.js for the user interface and backend logic, Firebase for authentication and data storage, styled with TailwindCSS and using Vapi's voice agents, Prepwise is a website project designed to help you learn integrating AI",
+     url:"https://github.com/senithdakshina/Real-Time-Voice-Agent-Interview",
+    tags: ["Next.js", "Firebase", "Tailwind CSS","Vapi AI","shadcn/ui","Google Gemeni"], 
+  },
 ];
 
 export const ProjectSection = () => {
