@@ -61,12 +61,20 @@ export const AboutMe = () => {
                     University
                   </p>
                   <p className="text-muted-foreground">
+
                     Led the planning and execution of a university-level eSports
                     competition hosted by the Department of Computer Science and
                     Technology, managing a team of 10+ members. Successfully
                     organized the event for 200+ participants, demonstrating
                     leadership, project management, and team collaboration
                     skills.
+
+                    Led the planning and execution of a university-level eSports competition hosted by the Department
+ of Computer Science and Technology, managing a team of 10+ members.
+                    Successfully organized the event for 200+ participants,
+                    demonstrating leadership, project management, and team
+                    collaboration skills.
+
                   </p>
                 </div>
               </div>
