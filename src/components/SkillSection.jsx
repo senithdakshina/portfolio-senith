@@ -3,12 +3,15 @@ import { cn } from "../lib/util";
 import { useState } from "react";
 
 const skills = [
-  { name: "Python", level: 90, category: "backend" },
-  { name: "Tailwind CSS", level: 85, category: "frontend" },
-  { name: "Bootstrap", level: 80, category: "frontend" },
+  { name: "Java", level: 90, category: "backend" },
+   { name: "HTML", level: 95, category: "frontend" },
   { name: "PHP", level: 85, category: "backend" },
+   { name: "Tailwind CSS", level: 85, category: "frontend" },
+  { name: "CSS", level: 90, category: "frontend" },
+  { name: "Bootstrap", level: 80, category: "frontend" },
   { name: "MySQL", level: 85, category: "tools" },
   { name: "MongoDB", level: 75, category: "tools" },
+  { name: "Firebase", level: 90, category: "tools" },
   { name: "Postman", level: 80, category: "tools" },
   { name: "Figma", level: 80, category: "tools" },
   { name: "AWS", level: 70, category: "tools" },
@@ -16,10 +19,9 @@ const skills = [
   { name: "Docker", level: 70, category: "tools" },
   { name: "Adobe PS", level: 75, category: "design" },
   { name: "Canva", level: 90, category: "design" },
-  { name: "Java", level: 80, category: "backend" },
+  { name: "Python", level: 80, category: "backend" },
   { name: "React", level: 85, category: "frontend" },
-  { name: "HTML", level: 95, category: "frontend" },
-  { name: "CSS", level: 90, category: "frontend" },
+ 
   ,
 ];
 const category =["all","frontend","backend","tools"]
