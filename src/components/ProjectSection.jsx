@@ -46,8 +46,8 @@ const projects = [
     id: 6,
     title: "Real-Time Voice Agent Interview Platform (Deployed (Work in Progress)) ",
     image: "./Projects/vocaAI.png",
-    Description: "VocaAI is an AI-powered interview preparation platform built with Next.js, Firebase, Tailwind CSS, Vapi AI, and Google Gemini. It enables users to create and take realistic AI-driven voice interviews, receive instant feedback, and track progress through a modern, responsive dashboard. The project focuses on real-world AI integration, secure authentication, and a seamless user experience. " ,
-     url:"https://vocaai-lac.vercel.app/",
+    Description: "VocaAI is an AI-powered interview preparation platform built with Next.js, Firebase, Tailwind CSS, Vapi AI, and Google Gemini. It enables users to create and take realistic AI-driven voice interviews, receive instant feedback, and track progress through a modern, responsive dashboard. The project focuses on real-world AI integration, secure authentication, and a seamless user experience.",
+     url:"https://voca-ai-git-dev-seniths-projects-b2bb43f5.vercel.app/sign_in",
     tags: ["Next.js", "Firebase", "Tailwind CSS","Vapi AI","shadcn/ui","Google Gemeni"], 
   },
 ];
