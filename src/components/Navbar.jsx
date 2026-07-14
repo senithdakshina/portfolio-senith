@@ -1,12 +1,11 @@
 import { cn } from "../lib/util";
 import { useEffect, useState } from "react";
-// Assuming you are using Lucide React or similar for icons
 import { Menu, X } from "lucide-react";
 
 const navItem = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Skill", href: "#skill" },
+  { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
@@ -20,14 +19,12 @@ export const Navbar = () => {
       setScrolled(window.scrollY > 10);
     };
 
-    // Set initial state in case page is already scrolled
     handleScrolled();
 
     window.addEventListener("scroll", handleScrolled);
     return () => window.removeEventListener("scroll", handleScrolled);
   }, []);
 
-  // Closes the menu when a link is clicked
   const handleLinkClick = () => {
     setMenuOpen(false);
   };
@@ -36,47 +33,42 @@ export const Navbar = () => {
     <nav
       className={cn(
         "fixed w-full z-40 transition-all duration-300 left-0",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
+        isScrolled ? "py-3 bg-background/88 backdrop-blur-xl border-b border-border shadow-sm" : "py-5"
       )}
       aria-label="Main navigation"
     >
       <div className="container flex items-center justify-between">
-        <a href="#hero" className="text-xl font-bold text-primary flex items-center">
+        <a href="#home" className="flex items-center text-xl font-black text-primary">
           <span className="relative z-10">
             <span className="text-glow text-foreground">Senith </span>Dakshina
           </span>
         </a>
 
-        {/* desktop nav - Hidden on small screens */}
-        <div className="hidden md:flex space-x-7">
+        <div className="hidden rounded-full border border-border bg-card/72 px-2 py-2 shadow-sm backdrop-blur md:flex">
           {navItem.map((item, key) => (
             <a
               key={key}
               href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300"
+              className="rounded-full px-4 py-2 text-sm font-bold text-foreground/75 transition-colors duration-300 hover:bg-primary/10 hover:text-primary"
             >
               {item.name}
             </a>
           ))}
         </div>
 
-        {/* mobile button - Hidden on medium/large screens */}
         <button
           onClick={() => setMenuOpen((prev) => !prev)}
-          // Use 'md:hidden' to only show this button on small screens
-          className="md:hidden " 
+          className="relative z-50 rounded-full border border-border bg-card p-2 shadow-sm md:hidden"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
-          {/* Corrected icon rendering, assuming imported Menu and X icons */}
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* mobile menu content - Hidden on medium/large screens */}
         <div 
           className={cn(
             "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
             "transition-all duration-300 md:hidden",
-            isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none" // Corrected pointer-none to pointer-events-none
+            isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           )}
         >
           <div className="flex flex-col space-y-8 text-xl">
@@ -84,8 +76,8 @@ export const Navbar = () => {
               <a
                 key={key}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                onClick={handleLinkClick} // Use the new handler
+                className="font-bold text-foreground/80 transition-colors duration-300 hover:text-primary"
+                onClick={handleLinkClick}
               >
                 {item.name}
               </a>

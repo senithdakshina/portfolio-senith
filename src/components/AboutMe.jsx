@@ -1,107 +1,144 @@
-import { Briefcase, Code, PersonStanding, Trophy, User } from "lucide-react";
+import {
+  Award,
+  Briefcase,
+  CheckCircle2,
+  Download,
+  GraduationCap,
+  Target,
+  Trophy,
+  Users,
+} from "lucide-react";
+
+const certifications = [
+  "Docker Foundations Professional Certificate",
+  "AWS Essential Training for Developers",
+  "Python Programming Course - University of Moratuwa",
+  "Advanced React",
+  "Microsoft Azure AI Essentials",
+];
+
+const strengths = [
+  "Full-stack project delivery",
+  "Clean UI implementation",
+  "API and database fundamentals",
+  "Fast learning and team ownership",
+];
+
+const moments = [
+  {
+    icon: Users,
+    title: "Event leadership",
+    detail:
+      "Main Coordinator for CST LAN Challenge at Uva Wellassa University, leading a 10+ member team for an event with 200+ participants.",
+  },
+  {
+    icon: Trophy,
+    title: "Competitive discipline",
+    detail:
+      "1st place in the Boys' D Division Badminton Championship organized by the Sri Lanka Schools Badminton Association.",
+  },
+  {
+    icon: Briefcase,
+    title: "Professional habits",
+    detail:
+      "Strong communication, time management, logical thinking, and a practical approach to solving problems with software.",
+  },
+];
 
 export const AboutMe = () => {
   return (
-    <section id="about" className="py-24 px-4 relative scale-90">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          About <span className="text-primary">Me</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 ">
-            <h3>CERTIFICATIONS</h3>
-            <p className="text-muted-foreground">
-              Docker Foundations Professional Certificate | LinkedIn Learning
-            </p>
-            <p className="text-muted-foreground">
-              AWS Essential Training for Developers | LinkedIn Learning
-            </p>
-            <p className="text-muted-foreground">
-              Python Programming Course | University of Moratuwa (CODL)
-            </p>
-            <p className="text-muted-foreground">Advanced React | coursera</p>
-            <p className="text-muted-foreground">
-              Microsoft Azure AI Essentials: Workloads and Machine Learning on
-              Azure | LinkedIn Learning
-            </p>
+    <section id="about" className="section-band relative px-4 py-24">
+      <div className="container mx-auto max-w-6xl">
+        <div className="grid items-end gap-8 md:grid-cols-[0.9fr_1.1fr]">
+          <div className="text-left">
+            <p className="section-kicker">About</p>
+            <h2 className="mt-3 text-balance text-3xl font-black md:text-5xl">
+              A software engineer in progress with the habits teams look for.
+            </h2>
+          </div>
+          <p className="text-lg leading-8 text-muted-foreground">
+            I am a Computer Science and Technology undergraduate at Uva Wellassa
+            University. I care about building interfaces that feel polished, APIs that
+            are understandable, and project work that moves from idea to usable result.
+          </p>
+        </div>
 
-            <p className="text-muted-foreground">
-              I quickly learn new technologies and thrive in both independent
-              and team environments, consistently aiming to deliver positive
-              outcomes. Eager to contribute to innovative projects and expand my
-              technical skills, I am committed to making a meaningful impact in
-              the IT industry while working toward my goal of becoming a
-              software engineer
-            </p>
+        <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_0.9fr]">
+          <div className="premium-panel p-6 text-left md:p-8">
+            <div className="flex items-start gap-4">
+              <div className="rounded-md bg-primary/10 p-3 text-primary">
+                <GraduationCap className="h-7 w-7" />
+              </div>
+              <div>
+                <p className="section-kicker">Profile</p>
+                <h3 className="mt-2 text-2xl font-black">Computer Science and Technology Undergraduate</h3>
+                <p className="mt-4 leading-8 text-muted-foreground">
+                  I learn quickly, communicate clearly, and like being close to the
+                  details: data models, user flows, implementation quality, and the small
+                  product decisions that make software feel reliable.
+                </p>
+              </div>
+            </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {strengths.map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-lg border border-border bg-background/70 p-4">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
+                  <span className="font-semibold">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#contact" className="cosmic-button">
-                Get In Touch
+                Start a Conversation
               </a>
               <a
                 href="CV pdf/E_G_Senith_Dakshina_UWU_CST_21_087.pdf"
-                download={"E_G_Senith_Dakshina_UWU_CST_21_087"}
-                className="px-6 py-2 rounded-full border border-primary hover:bg-primary/10 transition-colors duration-300"
+                download="E_G_Senith_Dakshina_UWU_CST_21_087"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-primary px-6 py-3 font-bold text-primary transition-colors duration-300 hover:bg-primary/10"
               >
-                Download CV
+                <Download size={18} /> Download CV
               </a>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 scale-90">
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <PersonStanding className="h-6 w-6 text-primary"></PersonStanding>
-                </div>
-                <div className="text-left">
-                  <h4 className="text-semibold text-lg">Volunteering</h4>
-                  <p className="text-muted-foreground">
-                    Main Coordinator – CST LAN Challenge, Uva Wellassa
-                    University
-                  </p>
-                  <p className="text-muted-foreground">
-                    Led the planning and execution of a university-level eSports competition hosted by the Department
- of Computer Science and Technology, managing a team of 10+ members.
-                    Successfully organized the event for 200+ participants,
-                    demonstrating leadership, project management, and team
-                    collaboration skills.
-                  </p>
-                </div>
+          <div className="space-y-5">
+            <div className="gradient-border p-6 text-left card-hover">
+              <div className="flex items-center gap-3">
+                <Award className="h-6 w-6 text-primary" />
+                <h3 className="text-xl font-black">Certifications</h3>
               </div>
-            </div>
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Trophy className="h-6 w-6 text-primary"></Trophy>
-                </div>
-
-                <div className="text-left">
-                  <h4 className="text-semibold text-lg">
-                    Extra Curricular Activities{" "}
-                  </h4>
-                  <p className="text-muted-foreground">
-                    Achieved 1st place in the Boys’ D Division Badminton
-                    Championship organized by the Sri Lanka Schools Badminton
-                    Association, showcasing teamwork, dedication, and strong
-                    competitive performance
+              <div className="mt-5 grid gap-3">
+                {certifications.map((item) => (
+                  <p key={item} className="rounded-md border border-border bg-background/60 px-4 py-3 font-semibold text-muted-foreground">
+                    {item}
                   </p>
-                </div>
+                ))}
               </div>
             </div>
 
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Briefcase className="h-6 w-6 text-primary"></Briefcase>
-                </div>
+            <div className="gradient-border p-6 text-left card-hover">
+              <div className="flex items-center gap-3">
+                <Target className="h-6 w-6 text-primary" />
+                <h3 className="text-xl font-black">What I bring</h3>
+              </div>
+              <div className="mt-5 space-y-5">
+                {moments.map((moment) => {
+                  const MomentIcon = moment.icon;
 
-                <div className="text-left">
-                  <h4 className="text-semibold text-lg">Soft skills</h4>
-                  <p className="text-muted-foreground">
-                    Creative and logical thinker with strong communication, effective time management, and team management skills.
-                  </p>
-                </div>
+                  return (
+                  <div key={moment.title} className="flex gap-4">
+                    <div className="mt-1 h-9 w-9 shrink-0 rounded-md bg-primary/10 p-2 text-primary">
+                      <MomentIcon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">{moment.title}</h4>
+                      <p className="mt-1 leading-7 text-muted-foreground">{moment.detail}</p>
+                    </div>
+                  </div>
+                  );
+                })}
               </div>
             </div>
           </div>

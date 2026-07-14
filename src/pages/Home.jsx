@@ -1,4 +1,3 @@
-import React from 'react'
 import { ThemeToggle } from '../components/ThemeToggle';
 import { StarBackground } from '../components/StarBackground';
 import { Navbar } from '../components/Navbar';
@@ -9,21 +8,21 @@ import { ProjectSection } from '../components/ProjectSection';
 import { ContactSection } from '../components/ContactSection';
 import { Footer } from '../components/Footer';
 
-export const Home =() =>{
-    return <div className='min-h-screen bg-background text-foreground overflow-x-hidden'>
-       
-        <ThemeToggle></ThemeToggle>
-        <StarBackground></StarBackground>
-        <Navbar></Navbar>
+export const Home = () => {
+  return (
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+      <ThemeToggle />
+      <StarBackground />
+      <Navbar />
 
-        <main>
-            
-            <Herosection></Herosection>
-            <AboutMe></AboutMe>
-            <SkillSection></SkillSection>
-            <ProjectSection></ProjectSection>
-            <ContactSection></ContactSection>
-        </main>
-        <Footer></Footer>
-        </div>;
+      <main>
+        <Herosection />
+        <AboutMe />
+        <SkillSection />
+        <ProjectSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </div>
+  );
 };

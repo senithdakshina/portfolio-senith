@@ -1,5 +1,5 @@
 {
-  "name": "my-react-app",
+  "name": "senith-dakshina-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -33,14 +33,14 @@
     "tailwindcss": "^3.4.18",
     "vite": "^7.2.2"
   },
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "description": "Professional portfolio for Senith Dakshina, built with React, Vite, and Tailwind CSS.",
   "main": "eslint.config.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/senithdakshina/portfolio-senith.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Senith Dakshina",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/senithdakshina/portfolio-senith/issues"

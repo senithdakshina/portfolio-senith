@@ -1,28 +1,42 @@
-/* src/index.css - Tailwind v3 compatible */
-
-/* Tailwind directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ---- Base layer: CSS variables, fonts, and base element styles ---- */
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --background: 210 33% 98%;
+    --foreground: 218 35% 12%;
     --card: 0 0% 100%;
-    --primary: 250 47% 60%;
-    --primary-foreground: 210 40% 98%;
-    --border: 214 32% 91%;
+    --card-foreground: 218 35% 12%;
+    --primary: 174 72% 27%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 32% 94%;
+    --secondary-foreground: 218 35% 12%;
+    --muted: 214 26% 91%;
+    --muted-foreground: 218 14% 41%;
+    --accent: 38 93% 53%;
+    --accent-foreground: 218 35% 12%;
+    --border: 214 24% 85%;
+    --input: 214 24% 85%;
+    --ring: 174 72% 27%;
   }
 
   .dark {
-    --background: 222 47% 4%;
-    --foreground: 213 31% 91%;
-    --card: 222 47% 8%;
-    --primary: 250 65% 65%;
-    --primary-foreground: 213 31% 91%;
-    --border: 217 3% 20%;
+    --background: 222 27% 8%;
+    --foreground: 210 24% 94%;
+    --card: 222 20% 12%;
+    --card-foreground: 210 20% 92%;
+    --primary: 172 69% 45%;
+    --primary-foreground: 222 27% 8%;
+    --secondary: 221 18% 17%;
+    --secondary-foreground: 210 20% 92%;
+    --muted: 221 18% 17%;
+    --muted-foreground: 215 12% 72%;
+    --accent: 39 96% 57%;
+    --accent-foreground: 222 27% 8%;
+    --border: 219 15% 24%;
+    --input: 219 15% 24%;
+    --ring: 172 69% 45%;
   }
 
   html {
@@ -32,19 +46,14 @@
   }
 
   body {
-    /* use the mapped Tailwind color names from tailwind.config.js */
     @apply bg-background text-foreground transition-colors duration-300;
+    min-width: 320px;
     font-feature-settings: "rlig", "calt" 1;
   }
 
-  /* avoid applying a border to every element globally (bad for performance/UI).
-     If you want a subtle default border on many elements, apply to a selector like
-     .with-border or style specific elements (buttons, cards, inputs). */
-  /* Example: style hr by default */
   hr { border-color: hsl(var(--border)); }
 }
 
-/* ---- Animations (kept as plain CSS so tailwind's animation utilities work) ---- */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -58,12 +67,18 @@
   70% { opacity: 1; }
   100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
 }
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+@keyframes shine {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
 
-/* ---- Converted utility classes (from your @utility blocks) ----
-     These are normal classes you can use in JSX: e.g. <div className="container">  */
 .container {
   margin-inline: auto;
-  padding-inline: 2rem;
+  padding-inline: 1rem;
 }
 @media (min-width: 640px) { .container { max-width: 640px; } }
 @media (min-width: 768px) { .container { max-width: 768px; } }
@@ -71,66 +86,141 @@
 @media (min-width: 1280px) { .container { max-width: 1280px; } }
 @media (min-width: 1400px) { .container { max-width: 1400px; } }
 
-/* text glow */
 .text-glow {
   position: relative;
-  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+  text-shadow: 0 0 18px hsl(var(--primary) / 0.24);
 }
 
-/* card hover */
 .card-hover {
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 .card-hover:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+  border-color: hsl(var(--primary) / 0.38);
+  box-shadow: 0 24px 70px hsl(var(--foreground) / 0.11);
 }
 
-/* gradient border */
 .gradient-border {
   position: relative;
   border-radius: 0.5rem;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
-  background-clip: padding-box;
-  border: 1px solid transparent;
+  background:
+    linear-gradient(180deg, hsl(var(--card) / 0.98), hsl(var(--card) / 0.94)),
+    linear-gradient(135deg, hsl(var(--primary) / 0.16), hsl(var(--accent) / 0.12));
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 18px 55px hsl(var(--foreground) / 0.07);
 }
 
-/* cosmic button (converted from your cosmic-button @utility) */
+.premium-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  background:
+    linear-gradient(135deg, hsl(var(--card) / 0.96), hsl(var(--secondary) / 0.82)),
+    linear-gradient(90deg, hsl(var(--primary) / 0.08), hsl(var(--accent) / 0.08));
+  box-shadow: 0 24px 80px hsl(var(--foreground) / 0.1);
+}
+
+.premium-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(hsl(var(--border) / 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--border) / 0.35) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, black, transparent 72%);
+  pointer-events: none;
+}
+
+.premium-panel > * {
+  position: relative;
+}
+
+.shine-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-line::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.22), transparent);
+  animation: shine 4s ease-in-out infinite;
+}
+
 .cosmic-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   border-radius: 9999px;
   background: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
-  font-weight: 500;
-  transition: transform .2s, box-shadow .2s;
+  font-weight: 700;
+  transition: transform .2s, box-shadow .2s, background-color .2s, filter .2s;
 }
 .cosmic-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(139, 139, 246, 0.5);
+  transform: translateY(-3px);
+  filter: saturate(1.08);
+  box-shadow: 0 16px 36px hsl(var(--primary) / 0.32);
 }
 .cosmic-button:active { transform: scale(.95); }
 
-/* star and meteor decorative elements */
 .star {
   position: absolute;
   border-radius: 9999px;
-  background: white;
-  box-shadow: 0 0 10px 2px rgba(255,255,255,0.4);
+  background: hsl(var(--primary) / 0.45);
+  box-shadow: 0 0 10px 2px hsl(var(--primary) / 0.16);
 }
 .meteor {
   position: absolute;
-  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+  background: linear-gradient(to right, hsl(var(--accent) / 0.8), transparent);
   border-radius: 9999px;
-  box-shadow: 0 0 10px 5px rgba(255,255,255,0.3);
+  box-shadow: 0 0 10px 5px hsl(var(--accent) / 0.12);
 }
 
-/* root container */
+.section-kicker {
+  color: hsl(var(--primary));
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-band {
+  position: relative;
+}
+
+.section-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(180deg, transparent, hsl(var(--secondary) / 0.45), transparent),
+    repeating-linear-gradient(90deg, transparent 0 78px, hsl(var(--border) / 0.23) 78px 79px);
+  pointer-events: none;
+}
+
+.section-band > * {
+  position: relative;
+  z-index: 1;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
 #root {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
-  text-align: center;
 }
