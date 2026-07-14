@@ -3,56 +3,31 @@ import { cn } from "../lib/util";
 import { Blocks, Cloud, Code2, Database, Layers3, Wrench } from "lucide-react";
 
 const skills = [
-  { name: "React", category: "frontend", level: "Advanced" },
-  { name: "Tailwind CSS", category: "frontend", level: "Advanced" },
-  { name: "HTML", category: "frontend", level: "Advanced" },
-  { name: "CSS", category: "frontend", level: "Advanced" },
-  { name: "Bootstrap", category: "frontend", level: "Strong" },
-  { name: "Node.js", category: "backend", level: "Strong" },
-  { name: "Express", category: "backend", level: "Strong" },
-  { name: "Spring Boot", category: "backend", level: "Strong" },
-  { name: "PHP", category: "backend", level: "Strong" },
-  { name: "Python", category: "backend", level: "Advanced" },
-  { name: "Java", category: "backend", level: "Strong" },
-  { name: "MySQL", category: "database", level: "Advanced" },
-  { name: "MongoDB", category: "database", level: "Strong" },
-  { name: "PostgreSQL", category: "database", level: "Strong" },
-  { name: "GitHub", category: "tools", level: "Advanced" },
-  { name: "Docker", category: "tools", level: "Working" },
-  { name: "Postman", category: "tools", level: "Advanced" },
-  { name: "AWS", category: "tools", level: "Working" },
-  { name: "Figma", category: "tools", level: "Strong" },
+  { name: "Python", level: 90, category: "backend" },
+  { name: "Tailwind CSS", level: 85, category: "frontend" },
+  { name: "Bootstrap", level: 80, category: "frontend" },
+  { name: "PHP", level: 85, category: "backend" },
+  { name: "MySQL", level: 85, category: "tools" },
+  { name: "MongoDB", level: 75, category: "tools" },
+  { name: "Postman", level: 80, category: "tools" },
+  { name: "Figma", level: 80, category: "tools" },
+  { name: "AWS", level: 70, category: "tools" },
+  { name: "GitHub", level: 85, category: "tools" },
+  { name: "Docker", level: 70, category: "tools" },
+  { name: "Adobe PS", level: 75, category: "design" },
+  { name: "Canva", level: 90, category: "design" },
+  { name: "Java", level: 80, category: "backend" },
+  { name: "React", level: 85, category: "frontend" },
+  { name: "HTML", level: 95, category: "frontend" },
+  { name: "CSS", level: 90, category: "frontend" },
+  ,
 ];
-
-const categories = ["all", "frontend", "backend", "database", "tools"];
-
-const capabilityGroups = [
-  {
-    icon: Layers3,
-    title: "Frontend engineering",
-    copy: "Responsive React interfaces with polished interaction, strong layout control, and maintainable component structure.",
-  },
-  {
-    icon: Blocks,
-    title: "Backend foundations",
-    copy: "REST APIs, server-side logic, authentication-aware flows, and clean integration between client and data layers.",
-  },
-  {
-    icon: Database,
-    title: "Data and persistence",
-    copy: "Relational and document database experience across project systems, dashboards, and management platforms.",
-  },
-  {
-    icon: Cloud,
-    title: "Delivery workflow",
-    copy: "GitHub, Docker fundamentals, API testing, cloud basics, and documentation-minded project execution.",
-  },
-];
+const category = ["all", "frontend", "backend", "tools"];
 
 export const SkillSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
+    (skill) => activeCategory === "all" || skill.category === activeCategory,
   );
 
   return (
@@ -66,8 +41,9 @@ export const SkillSection = () => {
             </h2>
           </div>
           <p className="text-lg leading-8 text-muted-foreground">
-            My tools are grouped around the work they help deliver: clean interfaces,
-            useful APIs, reliable data handling, and project workflows that teams can trust.
+            My tools are grouped around the work they help deliver: clean
+            interfaces, useful APIs, reliable data handling, and project
+            workflows that teams can trust.
           </p>
         </div>
 
@@ -76,13 +52,18 @@ export const SkillSection = () => {
             const GroupIcon = group.icon;
 
             return (
-            <div key={group.title} className="gradient-border p-5 text-left card-hover">
-              <div className="mb-4 inline-flex rounded-md bg-primary/10 p-3 text-primary">
-                <GroupIcon className="h-6 w-6" />
+              <div
+                key={group.title}
+                className="gradient-border p-5 text-left card-hover"
+              >
+                <div className="mb-4 inline-flex rounded-md bg-primary/10 p-3 text-primary">
+                  <GroupIcon className="h-6 w-6" />
+                </div>
+                <h3 className="text-lg font-black">{group.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                  {group.copy}
+                </p>
               </div>
-              <h3 className="text-lg font-black">{group.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">{group.copy}</p>
-            </div>
             );
           })}
         </div>
@@ -108,7 +89,7 @@ export const SkillSection = () => {
                     "rounded-full border px-4 py-2 text-sm font-bold capitalize transition-colors duration-300",
                     activeCategory === category
                       ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border bg-background text-foreground hover:border-primary hover:text-primary"
+                      : "border-border bg-background text-foreground hover:border-primary hover:text-primary",
                   )}
                 >
                   {category}
@@ -138,7 +119,8 @@ export const SkillSection = () => {
 
           <div className="mt-6 flex items-center gap-2 rounded-lg border border-border bg-primary/10 px-4 py-3 text-left text-sm font-semibold text-primary">
             <Wrench className="h-5 w-5 shrink-0" />
-            Comfortable learning new frameworks quickly when a project calls for them.
+            Comfortable learning new frameworks quickly when a project calls for
+            them.
           </div>
         </div>
       </div>

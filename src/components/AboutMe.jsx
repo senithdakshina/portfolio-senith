@@ -103,11 +103,43 @@ export const AboutMe = () => {
             </div>
           </div>
 
+
           <div className="space-y-5">
             <div className="gradient-border p-6 text-left card-hover">
               <div className="flex items-center gap-3">
                 <Award className="h-6 w-6 text-primary" />
                 <h3 className="text-xl font-black">Certifications</h3>
+
+          <div className="grid grid-cols-1 gap-6 scale-90">
+            <div className="gradient-border p-6 card-hover">
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <PersonStanding className="h-6 w-6 text-primary"></PersonStanding>
+                </div>
+                <div className="text-left">
+                  <h4 className="text-semibold text-lg">Volunteering</h4>
+                  <p className="text-muted-foreground">
+                    Main Coordinator – CST LAN Challenge, Uva Wellassa
+                    University
+                  </p>
+                  <p className="text-muted-foreground">
+
+                    Led the planning and execution of a university-level eSports
+                    competition hosted by the Department of Computer Science and
+                    Technology, managing a team of 10+ members. Successfully
+                    organized the event for 200+ participants, demonstrating
+                    leadership, project management, and team collaboration
+                    skills.
+
+                    Led the planning and execution of a university-level eSports competition hosted by the Department
+ of Computer Science and Technology, managing a team of 10+ members.
+                    Successfully organized the event for 200+ participants,
+                    demonstrating leadership, project management, and team
+                    collaboration skills.
+
+                  </p>
+                </div>
+
               </div>
               <div className="mt-5 grid gap-3">
                 {certifications.map((item) => (
@@ -127,6 +159,7 @@ export const AboutMe = () => {
                 {moments.map((moment) => {
                   const MomentIcon = moment.icon;
 
+
                   return (
                   <div key={moment.title} className="flex gap-4">
                     <div className="mt-1 h-9 w-9 shrink-0 rounded-md bg-primary/10 p-2 text-primary">
@@ -139,6 +172,15 @@ export const AboutMe = () => {
                   </div>
                   );
                 })}
+
+                <div className="text-left">
+                  <h4 className="text-semibold text-lg">Soft skills</h4>
+                  <p className="text-muted-foreground">
+                    Creative and logical thinker with strong communication,
+                    effective time management, and team management skills.
+                  </p>
+                </div>
+
               </div>
             </div>
           </div>
